@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marzipano Demo</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style>@-ms-viewport { width: device-width; }</style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="pano"></div>
+
+<a id="powered" href="#">
+  <img class="logo" src="img/powered.png">
+</a>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="#" class="scene" data-id="gare_do_oriente">
+        <li class="text">Oriente Station</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="jeronimos">
+        <li class="text">Jerónimos Monastery</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="museu_da_electricidade">
+        <li class="text">Electricity Museum</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="#" id="autorotateToggle" title="Autorotate">
+  <img class="icon on" src="img/pause.png">
+  <img class="icon off" src="img/play.png">
+</a>
+
+<a href="#" id="sceneListToggle" title="Scenes">
+  <img class="icon off" src="img/open.png">
+  <img class="icon on" src="img/close.png">
+</a>
+
+<script src="../common-marzipano/es5-shim.js"></script>
+<script src="../common-marzipano/eventShim.js"></script>
+<script src="../common-marzipano/requestAnimationFrame.js" ></script>
+<script src="../common-marzipano/marzipano.js" ></script>
+<script src="vendor/classList.js"></script>
+<script src="vendor/fastclick.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
