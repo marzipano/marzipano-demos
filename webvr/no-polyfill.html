@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebVR | Marzipano</title>
+<meta name="description" content="Display a single resolution cubic image." />
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style>@-ms-viewport { width: device-width; }</style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="../common-other/attribution.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="pano"></div>
+
+<div id="no-vr" class="vr-button" style="display: none;">No VR device detected</div>
+<div id="enter-vr" class="vr-button" style="display: none;">Enter VR mode</div>
+
+<a class="attribution" href="http://tksharpless.net/" target="_blank">
+  <div class="title">Panorama by</div>
+  <div class="name">Thomas Sharpless</div>
+</a>
+
+<script src="../common-shim/es5-shim.js"></script>
+<script src="../common-shim/eventShim.js"></script>
+<script src="../common-shim/requestAnimationFrame.js" ></script>
+<script src="../common-marzipano/marzipano.js" ></script>
+
+<script src="vendor/wakelock.js"></script>
+<script src="vendor/gl-matrix-min.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

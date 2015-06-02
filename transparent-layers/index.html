@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transparent Layer | Marzipano</title>
+<meta name="description" content="Display a 360º image with transparency over another background image, which is rotating automatically." />
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style>@-ms-viewport { width: device-width; }</style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="../common-other/attribution.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="pano"></div>
+
+<audio autoplay loop>
+  <source src="music.ogg" type="audio/ogg">
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<a class="attribution" href="http://www.kaemena360.com/" target="_blank">
+  <div class="title">Train panorama by</div>
+  <div class="name">Willy Kaemena</div>
+</a>
+
+<a class="attribution" href="http://www.eso.org/" target="_blank" style="bottom: 60px">
+  <div class="title">Milky Way panorama by</div>
+  <div class="name">ESO</div>
+</a>
+
+<a class="attribution" href="http://www.incompetech.com" target="_blank" style="bottom: 120px">
+  <div class="title">Also Sprach Zarathustra</div>
+  <div class="name">Kevin MacLeod</div>
+</a>
+
+<script src="../common-shim/es5-shim.js"></script>
+<script src="../common-shim/eventShim.js"></script>
+<script src="../common-shim/requestAnimationFrame.js" ></script>
+<script src="../common-marzipano/marzipano.js" ></script>
+
+<script src="index.js"></script>
+
+</body>
+</html>

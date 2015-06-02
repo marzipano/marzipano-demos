@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Extra Touch Gestures | Marzipano</title>
+<meta name="description" content="A 360º image gallery which hooks into [Hammer.js](http://hammerjs.github.io/) to add some extra touch (and mouse) gestures: double click/tap to zoom, swipe with two fingers to change panorama and press to add a comment." />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style>@-ms-viewport { width: device-width; }</style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="pano"></div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<div id="next" class="next nav">
+</div>
+
+<div id="prev" class="prev nav">
+</div>
+
+<form id="commentForm" style="display: none;">
+  <h2>Enter your comment</h2>
+  <textarea id="commentTextarea"></textarea>
+  <button type="submit">Ok</button>
+</form>
+
+<script src="../common-shim/es5-shim.js"></script>
+<script src="../common-shim/eventShim.js"></script>
+<script src="../common-shim/requestAnimationFrame.js" ></script>
+<script src="../common-marzipano/marzipano.js" ></script>
+<script src="vendor/classList.js"></script>
+<script src="vendor/fastclick.js" ></script>
+<script src="vendor/easing-min.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

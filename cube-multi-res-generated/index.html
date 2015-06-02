@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Generated Multiresolution Cube | Marzipano</title>
+<meta name="description" content="Marzipano allows media to be generated procedurally. This demo displayed a multiresolution cube which is generated in such a way. After level 16 (which corresponds to cubefaces of ~280 terapixel) it is possible to see issues due to lack of precision in the number types." />
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style>@-ms-viewport { width: device-width; }</style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="pano"></div>
+
+<div class="info">
+  <div>Fov: <span id="fov"></span></div>
+  <div>Face tiles: <span id="faceTiles"></span></div>
+  <div>Face size: <span id="facePixels"></span></div>
+  <div>Total tiles: <span id="totalTiles"></span></div>
+  <div>Total size: <span id="totalPixels"></span></div>
+</div>
+
+<script src="../common-shim/es5-shim.js"></script>
+<script src="../common-shim/eventShim.js"></script>
+<script src="../common-shim/requestAnimationFrame.js" ></script>
+<script src="../common-marzipano/marzipano.js" ></script>
+
+<script src="SolidColorSource.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

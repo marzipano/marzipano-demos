@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>World map | Marzipano</title>
+<meta name="description" content="Displays a map of the world using the Mapbox API" />
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style>@-ms-viewport { width: device-width; }</style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="pano"></div>
+
+<div id="style">
+  Map style: <br><select id="dropdown" data-bind="options: styleList, value: selectedStyle"></select>
+</div>
+
+<div id="attribution">
+  <p><a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a></p>
+  <p><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></p>
+</div>
+
+<script src="../common-shim/es5-shim.js"></script>
+<script src="../common-shim/eventShim.js"></script>
+<script src="../common-shim/requestAnimationFrame.js" ></script>
+<script src="../common-marzipano/marzipano.js" ></script>
+
+<script src="vendor/knockout.js"></script>
+<script src="vendor/lodash.js"></script>
+
+<script src="index.js"></script>
+
+</body>
+</html>

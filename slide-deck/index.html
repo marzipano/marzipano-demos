@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide Deck | Marzipano</title>
+<meta name="description" content="Slides overlayed on a 360° image as embedded hotspots. The slides were used for a presentation about Marzipano at the IVRPA 2015 conference." />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style>@-ms-viewport { width: device-width; }</style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="viewer"></div>
+
+<div data-section data-yaw="0" data-pitch="0" data-perspective-radius="1200">
+  <div data-slide>
+    <div class="first-page-header">
+      <img src="img/logo.png">
+      <h3>A new 360° media viewer</h3>
+    </div>
+    <div>
+      <div class="first-page-contacts">
+        <h1 class="name">Manuel Cabral</h1>
+        <h4 class="email"><a href="mailto:m.cabral@digisfera.com">m.cabral@digisfera.com</a></h4>
+      </div>
+      <div class="first-page-contacts">
+        <img class="digisfera" src="img/digisfera.png">
+        <h4 class="email"><a href="http://www.digisfera.com">www.digisfera.com</a></h4>
+      </div>
+    </div>
+  </div>
+
+  <div data-slide>
+    <img class="digisfera-big" src="img/digisfera.png">
+    <h3 class="section-h3">We create <span>web</span> applications with <span>360°</span> content</h3>
+  </div>
+
+  <div data-slide>
+    <h2>Virtual tours</h2>
+    <a href="http://www.visitlondon.com/discover-london/london-virtual-tour/"><img class="proj-img" src="img/visit_london.png"></a>
+    <a class="proj-title" href="http://www.visitlondon.com/discover-london/london-virtual-tour/">Visit London official tour</a>
+  </div>
+
+  <div data-slide>
+    <h2>Gigapixel tagging</h2>
+    <a href="http://360photos.fifa.com/#!startscene=ger_arg_gigapixel"><img class="proj-img" src="img/fifa_2014.png"></a>
+    <a class="proj-title" href="http://360photos.fifa.com/#!startscene=ger_arg_gigapixel">FIFA World Cup 2014 Final</a>
+  </div>
+
+  <div data-slide>
+    <h2>Games</h2>
+    <a href="http://demo.digisfera.pt/o2galaxy/"><img class="proj-img" src="img/o2_galaxy.png"></a>
+    <a class="proj-title" href="http://demo.digisfera.pt/o2galaxy/">O2 Galaxy Game</a>
+  </div>
+
+  <div data-slide>
+    <h2>Other applications</h2>
+    <a href="http://talonoutdoor.com/our-creative-landscape/creative-visualisation-tool/"><img class="proj-img" src="img/talon_vista.jpg"></a>
+    <a class="proj-title" href="http://talonoutdoor.com/our-creative-landscape/creative-visualisation-tool/">Talon Vista Uploader</a>
+  </div>
+
+  <div data-slide>
+    <h2>Dubai360</h2>
+    <a href="http://www.dubai360.com"><img class="proj-img" src="img/dubai.png"></a>
+    <a class="proj-title" href="http://www.dubai360.com">Interface design and development</a>
+  </div>
+</div>
+
+<div data-section data-yaw="1.57" data-pitch="0" data-perspective-radius="1200">
+  <div data-slide>
+    <h1 class="section-h1">Marzipano</h1>
+    <h3 class="section-h3">A new 360° media viewer</h3>
+  </div>
+  
+  <div data-slide>
+    <h2>Why?</h2>
+    <ul class="topics">
+      <h3>We wanted a viewer which:</h3>
+      <li class="topic">Is easier to customize using standard <span>HTML</span>, <span>CSS</span> and <span>Javascript</span></li>
+      <li class="topic">Provides more control and can be extended</li>
+      <li class="topic">Can be integrated in a modern front-end development workflow</li>
+      <li class="topic">Supports all major browsers and devices</li>
+    </ul>
+  </div>  
+  <div data-slide>
+    <h2>Marzipano Viewer and Tool</h2>
+    <ul class="topics">
+      <li class="topic">Marzipano Viewer: Library to view 360° media on the browser</li>
+      <li class="topic">Marzipano Tool: Browser application to create a simple tour that includes the Marzipano Viewer</li>
+    </ul>
+  </div>
+
+  <div data-slide>
+    <h2>Quick start guide</h2>
+    <a href="http://www.marzipano.net" target="_blank">
+      <img class="proj-img" src="img/quick_start.jpg">
+    </a>
+  </div>
+
+  <div data-slide>
+    <h2>Quick start guide</h2>
+    <ul class="topics">
+      <li class="topic">Marzipano Tool processes panoramas and generates a basic tour application</li>
+      <li class="topic">Application can be customized and further developed by editing the HTML, CSS and Javascript code</li>
+      <li class="topic">Design principle: embrace web technologies</li>
+    </ul>
+  </div>
+</div>
+
+
+<div data-section data-yaw="3.14" data-pitch="0" data-perspective-radius="1200">
+  <div data-slide>
+    <h1 class="section-h1">Marzipano Viewer</h1>
+    <h3 class="section-h3"></h3>
+  </div>
+
+  <div data-slide>
+    <h2>Media types</h2>
+    <ul class="topics">
+      <li class="topic"><a href="../cube-single-res" target="_blank">Cubic images</a></li>
+      <li class="topic"><a href="../cube-multi-res" target="_blank">Multiresolution cubic images</a></li>
+      <li class="topic"><a href="../flat-square-tiles" target="_blank">Multiresolution flat images</a></li>
+      <li class="topic"><a href="../equirectangular" target="_blank">Equirectangular images</a></li>
+      <li class="topic"><a href="../video-multi-res" target="_blank">Equirectangular videos</a></li>
+    </ul>
+  </div>
+
+  <div data-slide>
+    <h2>Media types</h2>
+    <ul  class="topics">
+      <li class="topic">Any tile URL scheme can be used <a href="../world-map" target="_blank">(Mapbox Demo)</a></li>
+      <li class="topic">Media can be loaded from different sources (not only URLs)</li>
+      <li class="topic">Images can be generated on the fly <a href="../cube-multi-res-generated" target="_blank">(Generated Cube Demo)</a></li>
+      <li class="topic">Marzipano be extended with custom media sources</li>
+      <li class="topic">Design principle: be modular and extensible</li>
+    </ul>
+  </div>
+
+
+  <div data-slide>
+    <h2>Browser support</h2>
+    <ul class="topics">
+      <h3>All major browsers and devices</h3>
+      <li class="topic">WebGL (most modern browsers)</li>
+      <li class="topic">CSS 3D Transforms fallback (IE10, Safari 6-7, Androids without WebGL)</li>
+      <li class="topic">Flash fallback (IE8-9)</li>
+    </ul>
+  </div>
+
+  <div data-slide>
+    <h2>Hotspots</h2>
+    <ul class="topics">
+      <li class="topic">Hotspots are HTML elements</li>
+      <li class="topic">Can use CSS effects</li>
+    </ul>
+    <a href="../hotspot-styles" target="_blank"><p class="btn">Hotspots Demo</p></a>
+  </div>
+
+  <div data-slide>
+    <h2>Embedded Hotspots</h2>
+    <ul class="topics">
+      <li class="topic">Hotspots with perspective projection</li>
+      <li class="topic">Overlay 360º image</li>
+      <li class="topic">Also HTML elements</li>
+    </ul>
+    <a href="../hotspots-embedded" target="_blank"><p class="btn">Embedded Hotspot Demo</p></a>
+  </div>
+
+  <div data-slide>
+    <h2>Controls</h2>
+    <ul class="topics">
+      <li class="topic">Mouse, Touch, Keyboard</li>
+      <li class="topic">Can be extended with new control methods</li>
+      <li class="topic"><a href="../device-orientation" target="_blank">DeviceOrientation (gyro) Demo</a></li>
+      <li class="topic">The <a href="http://hammerjs.github.io/" target="_blank">Hammer.js</a> library is used for touch gestures</li> 
+      <li class="topic">Design principle: reuse when possible (but do not compromise on performance)</li>
+    </ul>
+    <a href="../touch-gestures" target="_blank"><p class="btn">Extra Touch Gestures Demo</p></a>
+  </div>
+
+  <div data-slide>
+    <h2>Controls</h2>
+    <video class="video-big" controls src="../common-media/touch-gestures.mp4"></video>
+  </div>
+
+  <div data-slide>
+    <h2>Layers</h2>
+    <ul class="topics">
+      <li class="topic">Multiple media can be displayed simultaneously</li>
+    </ul>
+    <p class="btn"><a href="../layers" target="_blank">Layers Demo</a></p>
+    <ul class="topics">
+      <li class="topic">Different uses
+        <ul>
+          <a href="../transitions" target="_blank"><li>Transitions Demo</li></a>
+          <a href="../transparent-layers" target="_blank"><li>Transparent Layers Demo</li></a>
+          <a href="../editable" target="_blank"><li>Editable Layer Demo</li></a>
+          <a href="../anaglyph" target="_blank"><li>Anaglyph Demo</li></a>
+          <a href="../side-by-side" target="_blank"><li>Side-by-side Demo</li></a>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div data-slide>
+    <h2>VR</h2>
+    <ul class="topics">
+      <li class="topic">WebVR still in early stages of development</li>
+      <li class="topic"><a href="https://github.com/borismus/webvr-polyfill" target="_blank">webvr-polyfill</a> for Google Cardboard</li>
+      <li class="topic">Design principle: do as little as possible</li>
+      <li class="topic">Future steps:
+        <ul>
+          <li>Wait for WebVR to improve</li>
+          <li>Improve polyfill to support different devices</li>
+          <li>Barrel distortion: API for post-processing</li>
+        </ul>
+      </li>
+    </ul>
+    <a href="../webvr/with-polyfill.html" target="_blank"><p class="btn">WebVR Demo</p></a>
+  </div>
+
+  <div data-slide>
+    <h2>Performance</h2>
+    <ul class="topics">
+      <li class="topic">"Low Garbage" Javascript
+        <pre><code>var result = {};<br>// writes to `result` object<br>view.coordinatesToScreen({ yaw: 0, pitch: 0 }, result);<br>console.log(result.x);<br>console.log(result.y);
+        </code></pre>
+      </li>
+      <li class="topic">No large dependencies</li>
+      <li class="topic">&lt;50KB gzipped</li>
+    </ul>
+  </div>
+
+
+  <div data-slide>
+    <h2>Developer-friendly</h2>
+    <ul class="topics">
+      <li class="topic">Uses standard technologies</li>
+      <li class="topic">Plays well with modern web development tools (e.g. browserify)</li>
+      <li class="topic">Does as little as possible and can be extended</li>
+      <li class="topic">Demos and docs at <a href="http://www.marzipano.net">marzipano.net</a></li>
+      <li class="topic">Reference generated with JSDoc</li>
+      <li class="topic">Let us know if you have questions</li>
+    </ul>
+  </div>
+
+  <div data-slide>
+    <h2>Future work</h2>
+    <ul class="topics">
+      <li class="topic">More projections (e.g. stereographic for little planets)</li>
+      <li class="topic">More effects (e.g. motion blur)</li>
+      <li class="topic">Improvements to the Marzipano Tool
+        <ul>
+          <li>Alignment from EXIF data</li>
+          <li>Nadir image</li>
+          <li>Thumbnails</li>
+        </ul>
+      </li>
+      <li class="topic">Experiments with depth maps and 3D</li>
+      <li class="topic">API improvements</li>
+    </ul>
+  </div>
+
+
+  <div data-slide>
+    <h2>Marzipano Tool</h2>
+    <ul class="topics">
+      <li class="topic">Processes panoramas on the browser</li>
+      <li class="topic">Requires Chrome or Firefox</li>
+      <li class="topic">Performance improving with new browser releases</li>
+      <li class="topic">Technology may be useful for other applications
+        <ul>
+          <li>e.g. panorama hosting platform</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+  
+<div data-section data-yaw="4.71" data-pitch="0" data-perspective-radius="1200">
+  <div data-slide>
+    <h2>Licensing</h2>
+    <ul class="topics">
+      <li class="topic">Free for non-commercial use</li>
+      <li class="topic">Currently free for most regular virtual tour projects</li>
+      <li class="topic">Send us a description of the project and we'll provide a version without watermark</li>
+      <li class="topic">For more complex projects email us for details</li>
+    </ul>
+  </div>
+
+  <div data-slide>
+    <h2>Summary</h2>
+    <ul class="topics">
+      <li class="topic">The Marzipano Viewer is a library to display 360º media on the web</li>
+      <li class="topic">The Marzipano Tool creates a simple responsive tour easily</li>
+      <li class="topic">Customized with standard CSS, HTML and Javascript</li>
+      <li class="topic">Lightweight and performant</li>
+      <li class="topic">Supports all major browsers and devices</li>
+      <li class="topic">Can be used today</li>
+    </ul>
+  </div>
+
+  <div data-slide>
+    <h1 class="section-h1">Thanks!</h1>
+    <h3 class="section-h3">Questions?</h3>
+  </div>
+</div>
+
+<script src="../common-shim/es5-shim.js"></script>
+<script src="../common-shim/eventShim.js"></script>
+<script src="../common-shim/requestAnimationFrame.js" ></script>
+<script src="../common-marzipano/marzipano.js" ></script>
+<script src="eventEmitter.js"></script>
+<script src="SlideDeck.js"></script>
+<script src="updateHashWithDeck.js"></script>
+<script src="getSlidesFromDom.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
