@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.rotate-hotspot:hover {
+  z-index: 3;
+}
+
 
 .rotate-img,
 .rotate-content{

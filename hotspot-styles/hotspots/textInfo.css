@@ -26,6 +26,10 @@
   transition-timing-function: ease, cubic-bezier(.17,.67,.4,1.39);
 }
 
+#textInfo:hover {
+  z-index: 3;
+}
+
 #textInfo:hover .tooltip-content {
   opacity: 1;
   pointer-events: all;
