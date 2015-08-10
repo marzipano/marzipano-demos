@@ -6,9 +6,28 @@
 (function() {
   var EventEmitter = window.EventEmitter;
   var EventEmitterProxy = window.EventEmitterProxy;
-  var videoLayer = window.videoLayer;
+  var viewer = window.viewer;
+  var Marzipano = window.Marzipano;
+  var loadVideoInSync = window.loadVideoInSync;
+  var NullVideoElementWrapper = window.NullVideoElementWrapper;
+  var CanvasHackVideoElementWrapper = window.CanvasHackVideoElementWrapper;
 
-  var stage = window.stage;
+  // Use canvas hack for IE10
+  var browser = Marzipano.dependencies.bowser.browser;
+  var useCanvasHack = browser.msie;
+
+  // Create layer
+  var asset = new Marzipano.VideoAsset();
+  var source = new Marzipano.SingleAssetSource(asset);
+  var geometry = new Marzipano.EquirectGeometry([ { width: 1 } ]);
+
+  var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2560, 100*Math.PI/180);
+  var view = new Marzipano.RectilinearView(null, limiter);
+
+  var scene = viewer.createScene({ source: source, geometry: geometry, view: view, pinFirstLevel: false });
+
+  scene.switchTo({ transitionDuration: 0 });
+
 
   var emitter = new EventEmitter();
   var videoEmitter = new EventEmitterProxy();
@@ -21,7 +40,6 @@
   ];
 
   var currentState = {
-    layer: null,
     resolutionIndex: null,
     resolutionChanging: false
   };
@@ -31,45 +49,51 @@
 
     currentState.resolutionChanging = true;
 
+    videoEmitter.setObject(null);
+
     emitter.emit('change');
     emitter.emit('resolutionSet');
 
-    var currentVideoLayer = stage.listLayers()[0];
+    var level = resolutions[index];
+    var videoSrc = '../common-media/video/mercedes-f1-' + level.width + 'x' + level.width/2 + '.mp4';
 
+    var previousVideo = asset.video() && asset.video().videoElement();
 
-    // Create layer with new video level and add it to the stage
-    videoLayer.create(stage, resolutions[index], currentVideoLayer, function(err, layer) {
-      if(err) {
-        console.error(err);
+    loadVideoInSync(videoSrc, previousVideo, function(err, element) {
+      if(err) { 
         cb(err);
+        return;
       }
 
-      var oldLayers = stage.listLayers();
-      stage.removeAllLayers();
-      oldLayers.forEach(videoLayer.destroy);
-      stage.addLayer(layer);
+      if(previousVideo) {
+        previousVideo.pause();
+        previousVideo.volume = 0;
+        previousVideo.removeAttribute('src');
+      }
 
-      videoEmitter.setObject(videoLayer.layerVideoElement(layer));
+      var VideoElementWrapper = useCanvasHack ? CanvasHackVideoElementWrapper : NullVideoElementWrapper;
+      var wrappedVideo = new VideoElementWrapper(element);
+      asset.setVideo(wrappedVideo);
 
-      currentState.layer = layer;
       currentState.resolutionIndex = index;
       currentState.resolutionChanging = false;
 
+      videoEmitter.setObject(element);
+
       emitter.emit('change');
       emitter.emit('resolutionChange');
-      cb(null, layer);
+
+      cb();
     });
   }
 
 
   window.multiResVideo = {
     layer: function() {
-      return currentState.layer;
+      return scene.layer();
     },
     element: function() {
-      return currentState.layer ?
-                videoLayer.layerVideoElement(currentState.layer) :
-                null;
+      return asset.video() && asset.video().videoElement();
     },
     resolutions: function() {
       return resolutions;

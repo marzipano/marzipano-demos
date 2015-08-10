@@ -3,7 +3,5 @@
 (function() {
   var multiResVideo = window.multiResVideo;
 
-  multiResVideo.setResolutionIndex(1, function() {
-    multiResVideo.element().play();
-  });
+  multiResVideo.setResolutionIndex(1);
 })();
