@@ -30,7 +30,11 @@
   ]);
 
   // Create View
-  var view = new Marzipano.FlatView({ mediaAspectRatio: 1});
+  var limiter = Marzipano.util.compose(
+    Marzipano.FlatView.limit.visibleX(0, 1),
+    Marzipano.FlatView.limit.visibleY(0, 1)
+  );
+  var view = new Marzipano.FlatView({ mediaAspectRatio: 1}, limiter);
 
   // Create and display Scene
   var scene = viewer.createScene({
