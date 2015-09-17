@@ -38,16 +38,16 @@
   var container = scene.hotspotContainer();
 
   // Create hotspot for the AdSense widget
-  container.createHotspot(document.getElementById('adsense'), { yaw: -1.525, pitch: -0.395 }, { perspective: { radius: 2100, extraRotations: "rotateX(23deg) rotateY(2deg) rotateZ(0deg)" }});
+  container.createHotspot(document.getElementById('adsense'), { yaw: -1.525, pitch: -0.395 }, { perspective: { radius: 1050, extraRotations: "rotateX(23deg) rotateY(2deg) rotateZ(0deg)" }});
 
   // Create hotspot for the Twitter widget
-  container.createHotspot(document.getElementById('twitter'), { yaw: -1.434, pitch: -0.8 }, { perspective: { radius: 1900, extraRotations: "rotateX(42deg) rotateY(6deg) rotateZ(1deg)" }});
+  container.createHotspot(document.getElementById('twitter'), { yaw: -1.434, pitch: -0.8 }, { perspective: { radius: 950, extraRotations: "rotateX(42deg) rotateY(6deg) rotateZ(1deg)" }});
 
   // Create hotspot for the Facebook Like button
-  container.createHotspot(document.getElementById('facebook'), { yaw: 0.8, pitch: -0.3 }, { perspective: { radius: 1500, extraRotations: "rotateX(17deg) rotateY(-10deg) rotateZ(0deg)" }});
+  container.createHotspot(document.getElementById('facebook'), { yaw: 0.8, pitch: -0.3 }, { perspective: { radius: 750, extraRotations: "rotateX(17deg) rotateY(-10deg) rotateZ(0deg)" }});
 
   // Create hotspot with different sources
-  container.createHotspot(document.getElementById('iframespot'), { yaw: 0.0335, pitch: -0.102 }, { perspective: { radius: 3280, extraRotations: "rotateX(5deg)" }});
+  container.createHotspot(document.getElementById('iframespot'), { yaw: 0.0335, pitch: -0.102 }, { perspective: { radius: 1640, extraRotations: "rotateX(5deg)" }});
   container.createHotspot(document.getElementById('iframeselect'), { yaw: -0.35, pitch: -0.239 });
 
   // Switch sources when clicked
